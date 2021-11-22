@@ -11,7 +11,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/cnplat/yaml/main/ar
 # kubectl apply -n argocd -f https://raw.githubusercontent.com/cnplat/yaml/main/argo-cd/ha-appproject-crd.yaml
 # kubectl apply -n argocd -f https://raw.githubusercontent.com/cnplat/yaml/main/argo-cd/ha-install.yaml
 # 获取argo-cd admin密码
-~ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 nbTjEbeMQQlzcoZv
 # Visit UI: https://<your server ip>:30810/
 ```
@@ -27,7 +27,7 @@ kubectl apply -n argocd -f https://gitee.com/cnplat/yaml/raw/main/argo-cd/instal
 # kubectl apply -n argocd -f https://gitee.com/cnplat/yaml/raw/main/argo-cd/ha-appproject-crd.yaml
 # kubectl apply -n argocd -f https://gitee.com/cnplat/yaml/raw/main/argo-cd/ha-install.yaml
 # 获取argo-cd admin密码
-~ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 nbTjEbeMQQlzcoZv
 # Visit UI: https://<your server ip>:30810/
 ```
