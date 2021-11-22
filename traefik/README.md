@@ -1,8 +1,19 @@
 # traefik
 
+## Github
+
+```
+kubectl apply -f https://raw.githubusercontent.com/cnplat/argo-apps/main/traefik/traefik-namespace.yaml
+kubectl apply -n traefik -f https://raw.githubusercontent.com/cnplat/argo-apps/main/traefik/traefik-crd.yaml
+kubectl apply -n traefik -f https://raw.githubusercontent.com/cnplat/argo-apps/main/traefik/traefik-rbac.yaml
+kubectl apply -n traefik -f https://raw.githubusercontent.com/cnplat/argo-apps/main/traefik/traefik-ingress-controller.yml
+```
+
+## Gitee
+
 ```shell
-# 创建命名空间
-kubuctl create namespace traefik
-# 创建 argocd app
-argocd app create traefik --repo https://github.com/cnplat/argo-apps.git --path traefik --dest-server https://kubernetes.default.svc --dest-namespace traefik
+kubectl apply -f https://gitee.com/cnplat/argo-apps/raw/main/traefik/traefik-namespace.yaml
+kubectl apply -n traefik -f https://gitee.com/cnplat/argo-apps/raw/main/traefik/traefik-crd.yaml
+kubectl apply -n traefik -f https://gitee.com/cnplat/argo-apps/raw/main/traefik/traefik-rbac.yaml
+kubectl apply -n traefik -f https://gitee.com/cnplat/argo-apps/raw/main/traefik/traefik-ingress-controller.yml
 ```
