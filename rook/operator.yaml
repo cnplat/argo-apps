@@ -327,8 +327,10 @@ data:
   ROOK_OBC_WATCH_OPERATOR_NAMESPACE: "true"
 
   # Whether to start the discovery daemon to watch for raw storage devices on nodes in the cluster.
+  # 是否启动发现守护程序以监视群集中节点上的原始存储设备
   # This daemon does not need to run if you are only going to create your OSDs based on StorageClassDeviceSets with PVCs.
-  ROOK_ENABLE_DISCOVERY_DAEMON: "false"
+  # 如果您只打算使用PVC创建基于StorageClassDeviceSets的OSD，则不需要运行此守护进程
+  ROOK_ENABLE_DISCOVERY_DAEMON: "true"
   # The timeout value (in seconds) of Ceph commands. It should be >= 1. If this variable is not set or is an invalid value, it's default to 15.
   ROOK_CEPH_COMMANDS_TIMEOUT_SECONDS: "15"
   # Enable the volume replication controller.
