@@ -35,22 +35,22 @@ spec:
             # - --entrypoints.udpep.address=:9000/udp
             - --providers.kubernetescrd
             # 启用 metrics
-            - --metrics.prometheus=true
+            # - --metrics.prometheus=true
             # 启用 prometheus
-            - --metrics.prometheus.entryPoint=metrics
-            - --metrics.prometheus.buckets=0.100000, 0.300000, 1.200000, 5.000000
-            - --metrics.prometheus.addEntryPointsLabels=true
-            - --metrics.prometheus.addServicesLabels=true
-            - --metrics.prometheus.addrouterslabels=true
+            # - --metrics.prometheus.entryPoint=metrics
+            # - --metrics.prometheus.buckets=0.100000, 0.300000, 1.200000, 5.000000
+            # - --metrics.prometheus.addEntryPointsLabels=true
+            # - --metrics.prometheus.addServicesLabels=true
+            # - --metrics.prometheus.addrouterslabels=true
             # 启用 Jaeger
-            - --tracing.jaeger=true
-            - --tracing.jaeger.samplingServerURL=http://simplest-agent.observability:5778/sampling
-            - --tracing.jaeger.samplingType=const
-            - --tracing.jaeger.samplingParam=1.0
-            - --tracing.jaeger.localAgentHostPort=simplest-agent.observability:6831
-            - --tracing.jaeger.gen128Bit
-            - --tracing.jaeger.propagation=jaeger
-            - --tracing.jaeger.disableAttemptReconnecting=true
+            # - --tracing.jaeger=true
+            # - --tracing.jaeger.samplingServerURL=http://simplest-agent.observability:5778/sampling
+            # - --tracing.jaeger.samplingType=const
+            # - --tracing.jaeger.samplingParam=1.0
+            # - --tracing.jaeger.localAgentHostPort=simplest-agent.observability:6831
+            # - --tracing.jaeger.gen128Bit
+            # - --tracing.jaeger.propagation=jaeger
+            # - --tracing.jaeger.disableAttemptReconnecting=true
             # letsencrypt
             - --certificatesresolvers.myresolver.acme.tlschallenge
             - --certificatesresolvers.myresolver.acme.email=qiaicn@gmail.com
