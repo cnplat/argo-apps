@@ -1,0 +1,38 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: test-auth
+spec:
+  basicAuth:
+    secret: authsecret
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: authsecret
+type: kubernetes.io/basic-auth
+data:
+  password: cGFzc3dvcmQ= # user
+  username: dXNlcg== # password
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard-https
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`traefik.k3s.cnbattle.com`)
+      # 看这里
+      middlewares:
+        - name: test-auth
+          namespace: traefik
+      services:
+        - name: traefik
+          port: 8080
+  tls:
+    certResolver: myresolver
+
