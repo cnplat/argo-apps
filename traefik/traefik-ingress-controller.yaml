@@ -30,6 +30,9 @@ spec:
             - --api.insecure
             - --entrypoints.web.address=:80
             - --entrypoints.websecure.address=:443
+            # 全局 http 跳转 https
+            # - --entryPoints.web.http.redirections.entryPoint.to=websecure
+            # - --entrypoints.web.http.redirections.entryPoint.scheme=https
             - --entrypoints.metrics.address=:8002
             # - --entrypoints.tcpep.address=:8000
             # - --entrypoints.udpep.address=:9000/udp
